@@ -1,0 +1,53 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    font-family: jetbrainsmono, monospace;
+    color: white;
+    height: 100vh;
+}
+
+body {
+    background-color: black;
+    height: 100vh;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: underline;
+    color: inherit;
+}
+
+input {
+    color: inherit;
+}
+
+#container {
+    display: flex;
+    gap: 1.5em;
+    height: 100%;
+}
+
+main {
+    flex: 1;
+    overflow: scroll;
+}
+
+#input-container {
+    display: flex;
+}
+
+#input-field {
+    flex-grow: 1;
+}
+
+aside {
+    flex: 1;
+    overflow: scroll;
+}
+
+@media only screen and (max-width: 900px) {
+    #container {
+        flex-direction: column;
+    }
+}

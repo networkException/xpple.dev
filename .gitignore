@@ -1,0 +1,11 @@
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# npm
+node_modules
+
+# compile target
+*.js
