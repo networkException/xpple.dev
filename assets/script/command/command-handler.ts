@@ -26,7 +26,7 @@ export class CommandHandler {
     static #history: Array<string> = new Array<string>();
     static #historyIndex = 0;
 
-    static init() {
+    static init(): void {
         const cliContainer = document.getElementById("cli-container");
         if (cliContainer === null) {
             return console.error("CLI container doesn't exist.");
@@ -94,11 +94,11 @@ export class CommandHandler {
         this.#registerCommands();
     }
 
-    public static sendFeedback(string: HTMLElement | string) {
+    public static sendFeedback(string: HTMLElement | string): void {
         this.#inputContainer?.insertAdjacentHTML('beforebegin', `<span style="color: white;">${string}</span><br>`);
     }
 
-    public static sendError(string: HTMLElement | string) {
+    public static sendError(string: HTMLElement | string): void {
         this.#inputContainer?.insertAdjacentHTML('beforebegin', `<span style="color: red;">${string}</span><br>`);
     }
 
@@ -126,7 +126,7 @@ export class CommandHandler {
         return element.innerHTML;
     }
 
-    static #registerCommands() {
+    static #registerCommands(): void {
         Command.register(new CatCommand());
         Command.register(new CdCommand());
         Command.register(new ClearCommand());

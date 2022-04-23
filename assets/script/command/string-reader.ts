@@ -6,19 +6,19 @@ export class StringReader {
     static #SYNTAX_DOUBLE_QUOTE = '"';
     static #SYNTAX_SINGLE_QUOTE = '\'';
 
-    static #isAllowedNumber(char: string) {
+    static #isAllowedNumber(char: string): boolean {
         return char >= '0' && char <= '9' || char === '.' || char === '-';
     }
 
-    static #isQuotedStringStart(char: string) {
+    static #isQuotedStringStart(char: string): boolean {
         return char === StringReader.#SYNTAX_DOUBLE_QUOTE || char === StringReader.#SYNTAX_SINGLE_QUOTE;
     }
 
-    static #isWhitespace(char: string) {
+    static #isWhitespace(char: string): boolean {
         return char === ' ' || char === '\t';
     }
 
-    static #isAllowedInUnquotedString(char: string) {
+    static #isAllowedInUnquotedString(char: string): boolean {
         return char >= '0' && char <= '9'
             || char >= 'A' && char <= 'Z'
             || char >= 'a' && char <= 'z'

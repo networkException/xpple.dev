@@ -15,11 +15,10 @@ export abstract class INode {
             parts.push(currentINode.name);
 
             directory = currentINode.parent;
-        } while (directory !== undefined && directory.isRoot())
+        } while (directory !== undefined)
 
         parts.reverse();
 
         return parts.join('/');
     }
 }
-

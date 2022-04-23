@@ -6,12 +6,12 @@ export class WebStorageManager {
 
     static #sessionStorage = window.sessionStorage;
 
-    static saveDirectoriesAndFiles() {
+    static saveDirectoriesAndFiles(): void {
         const obj = FileManager.serialise(FileManager.getRoot());
         this.#localStorage.setItem("files", JSON.stringify(obj));
     }
 
-    static loadDirectoriesAndFiles() {
+    static loadDirectoriesAndFiles(): void {
         const json = this.#localStorage.getItem("files");
         if (json === null) {
             return;

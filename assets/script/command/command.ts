@@ -3,9 +3,9 @@ import {StringReader} from "./string-reader.js";
 
 export abstract class Command {
 
-    public static commands: Map<string, Command> = new Map();
+    public static commands: Map<string, Command> = new Map<string, Command>();
 
-    public static register(command: Command) {
+    public static register(command: Command): void {
         Command.commands.set(command.rootLiteral, command);
     }
 

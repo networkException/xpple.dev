@@ -8,7 +8,7 @@ export class FileManager {
     static #root: Directory;
     static #currentDirectory: Directory;
 
-    public static init() {
+    public static init(): void {
         this.#root = new Directory("~", undefined, true);
         this.setCurrentDirectory(this.#root);
     }
